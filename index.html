@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121b27">
+  <title>Lights Out | すべての光を、消そう。</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="game">
+    <header>
+      <p class="eyebrow"><span class="brand-light" aria-hidden="true"></span> A LITTLE LIGHT. A LITTLE LOGIC.</p>
+      <h1>Lights Out<span class="title-dot">.</span></h1>
+      <p class="subtitle">すべての光を、消そう。</p>
+    </header>
+
+    <section class="game-panel" aria-label="ライツアウトゲーム">
+      <div class="dashboard">
+        <div><span class="stat-label">現在の手数</span><span class="stat-value" id="moves">0</span></div>
+        <div class="remaining"><span class="stat-label">点灯中</span><span class="stat-value"><span id="remaining">0</span><span class="stat-total"> / 25</span></span></div>
+      </div>
+      <div id="board" class="board" role="group" aria-label="5行5列の盤面"></div>
+      <div class="status" id="status" role="status" aria-live="polite" aria-atomic="true">光をタップして、スタート。</div>
+      <div class="actions">
+        <button type="button" id="new-game" class="primary">新しい問題 <span aria-hidden="true">↗</span></button>
+        <button type="button" id="reset" class="secondary"><span aria-hidden="true">↺</span> リセット</button>
+      </div>
+    </section>
+
+    <section class="instructions" aria-labelledby="how-to">
+      <h2 id="how-to"><span aria-hidden="true">✦</span> 遊び方</h2>
+      <p>マスを押すと、<strong>そのマスと上下左右</strong>の光が反転。<br>25個すべてのライトを消せばクリア！</p>
+      <div class="legend"><span><i class="legend-on" aria-hidden="true"></i>点灯</span><span><i class="legend-off" aria-hidden="true"></i>消灯</span><span class="keyboard-note">Tabで移動 · Enter / Spaceで操作</span></div>
+    </section>
+    <footer>ひとつの光から、ひらめきへ。</footer>
+    <noscript><p>遊ぶにはブラウザのJavaScriptを有効にしてください。</p></noscript>
+  </main>
+</body>
+</html>
