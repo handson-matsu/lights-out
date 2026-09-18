@@ -89,3 +89,16 @@ function newPuzzle() {
 document.getElementById("reset").addEventListener("click", resetPuzzle);
 document.getElementById("new-game").addEventListener("click", newPuzzle);
 newPuzzle();
+
+// ページ読み込みごとに1回だけ記録し、応答待ちや再試行はしない。
+try {
+  fetch("https://script.google.com/macros/s/AKfycbxssCIHsD-N97SHxNC_GN0ihYeC0qy-lb-EY0KmSs6Gnztaph1sITMerLVEnNWOGkYc/exec?app=lights-out", {
+    method: "GET",
+    mode: "no-cors",
+    cache: "no-store",
+    credentials: "omit",
+    keepalive: true,
+  }).catch(() => {});
+} catch {
+  // アクセス記録の失敗でゲームを中断しない。
+}
